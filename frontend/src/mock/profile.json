@@ -1,0 +1,9 @@
+{
+  "profile": {
+    "college": "Demo College",
+    "branch": "CSE",
+    "year": 3,
+    "cgpa": 7.8,
+    "consentShare": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sessions": [
+    {
+      "sessionId": 1,
+      "code": "K7M2QX",
+      "title": "CSE Year 3 lab test",
+      "perSkill": 5,
+      "timeLimitMinutes": 25,
+      "status": "active",
+      "attemptsTaken": 12
+    },
+    {
+      "sessionId": 2,
+      "code": "P9X4ZD",
+      "title": "ECE Year 4 lab test",
+      "perSkill": 5,
+      "timeLimitMinutes": 25,
+      "status": "closed",
+      "attemptsTaken": 30
+    }
+  ]
+}

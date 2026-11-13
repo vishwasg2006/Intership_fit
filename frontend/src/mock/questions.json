@@ -1,0 +1,252 @@
+{
+  "attemptId": "mock-attempt-1",
+  "mode": "practice",
+  "status": "in_progress",
+  "timeLimitSeconds": 1200,
+  "startedAt": "",
+  "maxViolations": 3,
+  "violationsUsed": 0,
+  "resumed": false,
+  "questions": [
+    {
+      "questionId": "APT-01",
+      "skill": "aptitude",
+      "difficulty": "easy",
+      "question": "What is 15% of 200?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      }
+    },
+    {
+      "questionId": "APT-02",
+      "skill": "aptitude",
+      "difficulty": "easy",
+      "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+      "options": {
+        "A": "40",
+        "B": "42",
+        "C": "44",
+        "D": "46"
+      }
+    },
+    {
+      "questionId": "APT-03",
+      "skill": "aptitude",
+      "difficulty": "easy",
+      "question": "A train covers 120 km in 2 hours. What is its speed?",
+      "options": {
+        "A": "50 km/h",
+        "B": "60 km/h",
+        "C": "70 km/h",
+        "D": "80 km/h"
+      }
+    },
+    {
+      "questionId": "APT-04",
+      "skill": "aptitude",
+      "difficulty": "easy",
+      "question": "Find the odd one out: 27, 64, 100, 125",
+      "options": {
+        "A": "27",
+        "B": "64",
+        "C": "100",
+        "D": "125"
+      }
+    },
+    {
+      "questionId": "APT-05",
+      "skill": "aptitude",
+      "difficulty": "medium",
+      "question": "An item bought for Rs 400 is sold at a 25% profit. What is the selling price?",
+      "options": {
+        "A": "Rs 450",
+        "B": "Rs 480",
+        "C": "Rs 500",
+        "D": "Rs 520"
+      }
+    },
+    {
+      "questionId": "PRO-01",
+      "skill": "programming",
+      "difficulty": "easy",
+      "question": "Which data structure follows the LIFO (last in, first out) principle?",
+      "options": {
+        "A": "Array",
+        "B": "Stack",
+        "C": "Queue",
+        "D": "Linked list"
+      }
+    },
+    {
+      "questionId": "PRO-02",
+      "skill": "programming",
+      "difficulty": "easy",
+      "question": "What does print(len('hello')) output in Python?",
+      "options": {
+        "A": "6",
+        "B": "Error",
+        "C": "4",
+        "D": "5"
+      }
+    },
+    {
+      "questionId": "PRO-03",
+      "skill": "programming",
+      "difficulty": "easy",
+      "question": "Which loop is guaranteed to run its body at least once?",
+      "options": {
+        "A": "do-while loop",
+        "B": "for-each loop",
+        "C": "for loop",
+        "D": "while loop"
+      }
+    },
+    {
+      "questionId": "PRO-04",
+      "skill": "programming",
+      "difficulty": "easy",
+      "question": "What is the time complexity of accessing an array element by its index?",
+      "options": {
+        "A": "O(log n)",
+        "B": "O(n)",
+        "C": "O(n squared)",
+        "D": "O(1)"
+      }
+    },
+    {
+      "questionId": "PRO-05",
+      "skill": "programming",
+      "difficulty": "medium",
+      "question": "Binary search can only be applied to an array that is:",
+      "options": {
+        "A": "Of even length",
+        "B": "Unsorted",
+        "C": "Made of unique values",
+        "D": "Sorted"
+      }
+    },
+    {
+      "questionId": "WEB-01",
+      "skill": "web",
+      "difficulty": "easy",
+      "question": "Which HTML tag defines the largest heading?",
+      "options": {
+        "A": "<h6>",
+        "B": "<heading>",
+        "C": "<head>",
+        "D": "<h1>"
+      }
+    },
+    {
+      "questionId": "WEB-02",
+      "skill": "web",
+      "difficulty": "easy",
+      "question": "Which CSS property changes the colour of text?",
+      "options": {
+        "A": "text-style",
+        "B": "foreground",
+        "C": "font-color",
+        "D": "color"
+      }
+    },
+    {
+      "questionId": "WEB-03",
+      "skill": "web",
+      "difficulty": "easy",
+      "question": "Which HTML tag creates a hyperlink?",
+      "options": {
+        "A": "<a>",
+        "B": "<href>",
+        "C": "<link>",
+        "D": "<url>"
+      }
+    },
+    {
+      "questionId": "WEB-04",
+      "skill": "web",
+      "difficulty": "easy",
+      "question": "Which CSS selector targets an element by its id?",
+      "options": {
+        "A": "#header",
+        "B": "&header",
+        "C": "*header",
+        "D": ".header"
+      }
+    },
+    {
+      "questionId": "WEB-05",
+      "skill": "web",
+      "difficulty": "medium",
+      "question": "In JavaScript, which keyword declares a block-scoped variable that can be reassigned?",
+      "options": {
+        "A": "var",
+        "B": "const",
+        "C": "let",
+        "D": "def"
+      }
+    },
+    {
+      "questionId": "DBM-01",
+      "skill": "dbms",
+      "difficulty": "easy",
+      "question": "Which SQL command is used to retrieve data from a table?",
+      "options": {
+        "A": "SELECT",
+        "B": "DELETE",
+        "C": "INSERT",
+        "D": "UPDATE"
+      }
+    },
+    {
+      "questionId": "DBM-02",
+      "skill": "dbms",
+      "difficulty": "easy",
+      "question": "Which keyword removes duplicate rows from a query result?",
+      "options": {
+        "A": "DIFFERENT",
+        "B": "DISTINCT",
+        "C": "UNIQUE",
+        "D": "REMOVE"
+      }
+    },
+    {
+      "questionId": "DBM-03",
+      "skill": "dbms",
+      "difficulty": "easy",
+      "question": "A primary key column can contain:",
+      "options": {
+        "A": "Only unique, non-null values",
+        "B": "Duplicate values",
+        "C": "NULL values",
+        "D": "Only text values"
+      }
+    },
+    {
+      "questionId": "DBM-04",
+      "skill": "dbms",
+      "difficulty": "easy",
+      "question": "Which clause filters rows before they are grouped?",
+      "options": {
+        "A": "HAVING",
+        "B": "LIMIT",
+        "C": "ORDER BY",
+        "D": "WHERE"
+      }
+    },
+    {
+      "questionId": "DBM-05",
+      "skill": "dbms",
+      "difficulty": "medium",
+      "question": "Which JOIN returns all rows from the left table and the matching rows from the right table?",
+      "options": {
+        "A": "INNER JOIN",
+        "B": "CROSS JOIN",
+        "C": "LEFT JOIN",
+        "D": "SELF JOIN"
+      }
+    }
+  ]
+}

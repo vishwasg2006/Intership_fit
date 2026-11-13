@@ -1,0 +1,79 @@
+{
+  "latest": {
+    "attemptId": "mock-attempt-2",
+    "mode": "practice",
+    "status": "completed",
+    "overall": 68,
+    "skillScores": [
+      {
+        "skill": "aptitude",
+        "score": 72
+      },
+      {
+        "skill": "programming",
+        "score": 70
+      },
+      {
+        "skill": "web",
+        "score": 80
+      },
+      {
+        "skill": "dbms",
+        "score": 50
+      }
+    ],
+    "takenAt": "2026-11-13T12:09:00Z"
+  },
+  "history": [
+    {
+      "attemptId": "mock-attempt-1",
+      "mode": "practice",
+      "status": "completed",
+      "overall": 52,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 60
+        },
+        {
+          "skill": "programming",
+          "score": 48
+        },
+        {
+          "skill": "web",
+          "score": 65
+        },
+        {
+          "skill": "dbms",
+          "score": 35
+        }
+      ],
+      "takenAt": "2026-10-13T12:00:00Z"
+    },
+    {
+      "attemptId": "mock-attempt-2",
+      "mode": "practice",
+      "status": "completed",
+      "overall": 68,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 72
+        },
+        {
+          "skill": "programming",
+          "score": 70
+        },
+        {
+          "skill": "web",
+          "score": 80
+        },
+        {
+          "skill": "dbms",
+          "score": 50
+        }
+      ],
+      "takenAt": "2026-11-13T12:09:00Z"
+    }
+  ]
+}
