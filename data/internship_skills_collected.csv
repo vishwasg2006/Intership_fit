@@ -1,0 +1,26 @@
+internship_id,skill,min_score,weight,basis
+1,programming,55,3,listing
+1,web,50,2,listing
+2,programming,55,3,listing
+2,web,45,2,listing
+3,web,50,3,listing
+3,dbms,40,2,listing
+3,programming,40,2,listing
+4,web,50,3,title-based (proposed)
+4,programming,45,2,title-based (proposed)
+5,programming,45,3,listing
+5,web,35,1,title-based (proposed)
+6,programming,55,3,listing
+6,web,55,3,listing
+7,web,55,3,listing
+7,dbms,45,2,listing
+7,programming,45,2,listing
+8,programming,45,3,title-based (proposed)
+8,aptitude,35,1,title-based (proposed)
+9,programming,50,3,title-based (proposed)
+9,aptitude,45,2,title-based (proposed)
+10,programming,45,2,title-based (proposed)
+10,web,40,2,title-based (proposed)
+10,dbms,35,1,title-based (proposed)
+11,programming,35,2,title-based (proposed)
+11,aptitude,40,2,title-based (proposed)

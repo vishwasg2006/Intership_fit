@@ -1,0 +1,14 @@
+{
+  "drive": {
+    "driveId": 2,
+    "company": "New Co",
+    "role": "Intern",
+    "date": "2026-12-01",
+    "deadline": "2026-11-28",
+    "minCgpa": 6,
+    "minScore": 55,
+    "branches": [
+      "CSE"
+    ]
+  }
+}

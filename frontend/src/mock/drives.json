@@ -1,0 +1,17 @@
+{
+  "drives": [
+    {
+      "driveId": 1,
+      "company": "Acme Systems",
+      "role": "Software Trainee",
+      "date": "2026-11-25",
+      "deadline": "2026-11-22",
+      "minCgpa": 6.5,
+      "minScore": 60,
+      "branches": [
+        "CSE",
+        "ISE"
+      ]
+    }
+  ]
+}

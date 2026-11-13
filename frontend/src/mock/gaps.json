@@ -1,0 +1,39 @@
+{
+  "gaps": [
+    {
+      "skill": "dbms",
+      "score": 50,
+      "target": 70,
+      "gap": 20,
+      "estimatedHours": 4,
+      "resources": [
+        {
+          "title": "SQLBolt: interactive SQL lessons",
+          "url": "https://sqlbolt.com/"
+        },
+        {
+          "title": "W3Schools SQL tutorial",
+          "url": "https://www.w3schools.com/sql/"
+        }
+      ]
+    }
+  ],
+  "roadmap": [
+    {
+      "week": 1,
+      "focus": "DBMS",
+      "tasks": [
+        "Study: SQLBolt: interactive SQL lessons",
+        "Study: W3Schools SQL tutorial",
+        "Practice 10 questions on dbms"
+      ]
+    },
+    {
+      "week": 2,
+      "focus": "Retest",
+      "tasks": [
+        "Retake the assessment"
+      ]
+    }
+  ]
+}

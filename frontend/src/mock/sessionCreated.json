@@ -1,0 +1,10 @@
+{
+  "session": {
+    "sessionId": 3,
+    "code": "H3T8WB",
+    "title": "New session",
+    "perSkill": 5,
+    "timeLimitMinutes": 25,
+    "status": "active"
+  }
+}

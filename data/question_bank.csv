@@ -1,0 +1,61 @@
+question_id,skill,difficulty,weight,question,option_a,option_b,option_c,option_d,correct_option,explanation
+APT-01,aptitude,easy,1,What is 15% of 200?,20,25,30,35,C,15/100 x 200 = 30.
+APT-02,aptitude,easy,1,"Find the next number in the series: 2, 6, 12, 20, 30, ?",40,42,44,46,B,"Differences are 4, 6, 8, 10, so the next difference is 12 and 30 + 12 = 42."
+APT-03,aptitude,easy,1,A train covers 120 km in 2 hours. What is its speed?,50 km/h,60 km/h,70 km/h,80 km/h,B,Speed = distance / time = 120 / 2 = 60 km/h.
+APT-04,aptitude,easy,1,"Find the odd one out: 27, 64, 100, 125",27,64,100,125,C,"27, 64 and 125 are perfect cubes (3, 4, 5 cubed); 100 is not."
+APT-05,aptitude,medium,2,An item bought for Rs 400 is sold at a 25% profit. What is the selling price?,Rs 450,Rs 480,Rs 500,Rs 520,C,"Profit = 25% of 400 = 100, so the selling price is 500."
+APT-06,aptitude,medium,2,"A can finish a job in 12 days and B in 24 days. Working together, how many days will they take?",6 days,8 days,9 days,10 days,B,"Combined rate = 1/12 + 1/24 = 1/8 per day, so 8 days."
+APT-07,aptitude,medium,2,The ratio of boys to girls in a class is 3:2 and there are 40 students. How many girls are there?,12,16,18,24,B,Girls = 2/5 of 40 = 16.
+APT-08,aptitude,medium,2,"The average of 5 numbers is 20. If one number, 30, is removed, what is the average of the remaining 4?",15,17.5,18,20,B,Total = 100; remaining total = 70; 70 / 4 = 17.5.
+APT-09,aptitude,hard,3,"Two pipes fill a tank in 10 and 15 hours. A drain empties it in 30 hours. With all three open, how long to fill the tank?",6 hours,7.5 hours,8 hours,9 hours,B,"Net rate = 1/10 + 1/15 - 1/30 = 4/30 = 2/15 per hour, so 7.5 hours."
+APT-10,aptitude,hard,3,A person walks to a place at 5 km/h and returns at 3 km/h. What is the average speed for the round trip?,3.75 km/h,4 km/h,4.25 km/h,4.5 km/h,A,Average speed = 2ab/(a+b) = 2 x 5 x 3 / 8 = 3.75 km/h.
+PRO-01,programming,easy,1,"Which data structure follows the LIFO (last in, first out) principle?",Array,Stack,Queue,Linked list,B,A stack removes the most recently added element first.
+PRO-02,programming,easy,1,What does print(len('hello')) output in Python?,6,Error,4,5,D,'hello' has 5 characters.
+PRO-03,programming,easy,1,Which loop is guaranteed to run its body at least once?,do-while loop,for-each loop,for loop,while loop,A,A do-while checks its condition after running the body.
+PRO-04,programming,easy,1,What is the time complexity of accessing an array element by its index?,O(log n),O(n),O(n squared),O(1),D,Index access is a direct memory lookup.
+PRO-05,programming,medium,2,Binary search can only be applied to an array that is:,Of even length,Unsorted,Made of unique values,Sorted,D,Binary search relies on ordering to discard half of the range each step.
+PRO-06,programming,medium,2,What does this Python function return for f(5)? def f(n): return 1 if n <= 1 else n * f(n - 1),24,25,60,120,D,It computes 5 factorial = 120.
+PRO-07,programming,medium,2,"What does this Python code print? x = [1, 2, 3]; y = x; y.append(4); print(x)",[4],"[1, 2, 3]","[1, 2, 3, 4]",Error,C,"y refers to the same list as x, so appending through y changes x."
+PRO-08,programming,medium,2,Which sorting algorithm has a worst-case time complexity of O(n log n)?,Bubble sort,Selection sort,Merge sort,Insertion sort,C,Merge sort always splits and merges in O(n log n); the others are O(n squared) in the worst case.
+PRO-09,programming,hard,3,"What is the time complexity of: for i in range(n): for j in range(i): print(i, j)?",O(n),O(n squared),O(2 to the n),O(n log n),B,"The inner loop runs 0 + 1 + ... + (n-1) = n(n-1)/2 times, which is O(n squared)."
+PRO-10,programming,hard,3,What is the time complexity of extracting the minimum from a min-heap with n elements?,O(log n),O(1),O(n),O(n log n),A,"Reading the minimum is O(1), but removing it requires re-heapifying, which takes O(log n)."
+WEB-01,web,easy,1,Which HTML tag defines the largest heading?,<h6>,<heading>,<head>,<h1>,D,<h1> is the top-level heading; <h6> is the smallest.
+WEB-02,web,easy,1,Which CSS property changes the colour of text?,text-style,foreground,font-color,color,D,The color property sets the text colour.
+WEB-03,web,easy,1,Which HTML tag creates a hyperlink?,<a>,<href>,<link>,<url>,A,"The anchor tag <a href=""...""> creates links."
+WEB-04,web,easy,1,Which CSS selector targets an element by its id?,#header,&header,*header,.header,A,A hash symbol selects by id; a dot selects by class.
+WEB-05,web,medium,2,"In JavaScript, which keyword declares a block-scoped variable that can be reassigned?",var,const,let,def,C,let is block-scoped and reassignable; const cannot be reassigned; var is function-scoped.
+WEB-06,web,medium,2,What does === do in JavaScript?,Compares value only,Compares type only,Compares both value and type,Assigns a value,C,Strict equality compares both value and type without type coercion.
+WEB-07,web,medium,2,Which React hook is used to manage state inside a function component?,useMemo,useEffect,useState,useRef,C,useState returns the current state and a setter function.
+WEB-08,web,medium,2,Which HTTP method is typically used to create a new resource in a REST API?,OPTIONS,HEAD,POST,GET,C,POST submits data to create a new resource; GET only reads.
+WEB-09,web,hard,3,What does console.log(typeof null) print in JavaScript?,number,undefined,null,object,D,This is a long-standing quirk of JavaScript: typeof null returns 'object'.
+WEB-10,web,hard,3,Which of these is NOT a valid state of a JavaScript Promise?,rejected,fulfilled,pending,completed,D,"A Promise is pending, fulfilled or rejected; 'completed' is not a state."
+DBM-01,dbms,easy,1,Which SQL command is used to retrieve data from a table?,SELECT,DELETE,INSERT,UPDATE,A,SELECT reads rows; the others modify data.
+DBM-02,dbms,easy,1,Which keyword removes duplicate rows from a query result?,DIFFERENT,DISTINCT,UNIQUE,REMOVE,B,SELECT DISTINCT returns only unique rows.
+DBM-03,dbms,easy,1,A primary key column can contain:,"Only unique, non-null values",Duplicate values,NULL values,Only text values,A,A primary key must uniquely identify each row and cannot be NULL.
+DBM-04,dbms,easy,1,Which clause filters rows before they are grouped?,HAVING,LIMIT,ORDER BY,WHERE,D,WHERE filters individual rows; HAVING filters groups after grouping.
+DBM-05,dbms,medium,2,Which JOIN returns all rows from the left table and the matching rows from the right table?,INNER JOIN,CROSS JOIN,LEFT JOIN,SELF JOIN,C,"LEFT JOIN keeps every left row, with NULLs where there is no match."
+DBM-06,dbms,medium,2,Which clause is used to filter groups created by GROUP BY?,WHERE,HAVING,DISTINCT,FROM,B,HAVING applies conditions to aggregated groups.
+DBM-07,dbms,medium,2,What is the main purpose of normalization?,Encrypt the data,Reduce redundancy and anomalies,Make every query faster,Increase data redundancy,B,Normalization organizes tables to avoid duplicate data and update anomalies.
+DBM-08,dbms,medium,2,"In ACID properties of transactions, what does the 'A' stand for?",Accuracy,Authorization,Atomicity,Availability,C,Atomicity means a transaction happens entirely or not at all.
+DBM-09,dbms,hard,3,Which normal form removes transitive dependencies of non-key attributes on the primary key?,Second normal form (2NF),Third normal form (3NF),First normal form (1NF),None of the normal forms,B,"3NF requires that non-key attributes depend only on the key, not on other non-key attributes."
+DBM-10,dbms,hard,3,What is the difference between COUNT(*) and COUNT(column)?,COUNT(column) counts only distinct values,"COUNT(column) ignores NULLs in that column, while COUNT(*) counts all rows","COUNT(*) ignores NULLs, while COUNT(column) counts all rows",They always return the same result,B,COUNT(*) counts every row; COUNT(column) counts only rows where the column is not NULL.
+APT-11,aptitude,easy,1,A train travels 120 km in 2 hours. What is its average speed?,40 km/h,50 km/h,60 km/h,70 km/h,C,Speed = distance / time = 120 / 2 = 60 km/h.
+APT-12,aptitude,easy,1,"If 5 pens cost Rs 50, what is the cost of 8 pens?",Rs 70,Rs 75,Rs 80,Rs 90,C,"One pen costs Rs 10, so 8 pens cost Rs 80."
+APT-13,aptitude,medium,2,An item bought for Rs 400 is sold at a 25% profit. What is the selling price?,Rs 450,Rs 500,Rs 520,Rs 550,B,"Profit = 25% of 400 = 100, so the selling price is Rs 500."
+APT-14,aptitude,medium,2,"The ratio of boys to girls in a class is 3:2. If the class has 30 students, how many are girls?",10,12,15,18,B,Girls = 2/5 of 30 = 12.
+APT-15,aptitude,hard,3,"A can finish a job in 12 days and B in 18 days. Working together, how long will they take?",6 days,7.2 days,7.5 days,8 days,B,"Combined rate = 1/12 + 1/18 = 5/36 per day, so the time is 36/5 = 7.2 days."
+PRO-11,programming,easy,1,What is the time complexity of accessing an array element by its index?,O(n),O(log n),O(1),O(n^2),C,"Indexing computes the address directly, so it takes constant time."
+PRO-12,programming,easy,1,Which Python keyword is used to define a function?,func,define,function,def,D,Python functions are defined with the def keyword.
+PRO-13,programming,medium,2,What is the worst-case time complexity of binary search on a sorted array of n elements?,O(n),O(log n),O(n log n),O(1),B,"Each step halves the search range, giving O(log n)."
+PRO-14,programming,medium,2,Which data structure is typically used to implement breadth-first search (BFS)?,Queue,Stack,Heap,Hash table,A,"BFS visits nodes level by level, which needs a FIFO queue."
+PRO-15,programming,hard,3,What is the average-case time complexity of quicksort?,O(n),O(n^2),O(log n),O(n log n),D,Balanced partitions give O(n log n) on average; the worst case is O(n^2).
+WEB-11,web,easy,1,Which HTML attribute provides alternative text for an image?,title,alt,src,caption,B,The alt attribute is read by screen readers and shown if the image fails to load.
+WEB-12,web,easy,1,Which CSS property controls the space between an element's content and its border?,margin,gap,padding,spacing,C,Padding is the space inside the border; margin is outside it.
+WEB-13,web,medium,2,Which HTTP status code means 'Not Found'?,404,200,301,500,A,404 means the server could not find the requested resource.
+WEB-14,web,medium,2,"In JavaScript, which keyword declares a block-scoped variable that can be reassigned?",var,let,const,static,B,let is block-scoped and reassignable; const cannot be reassigned; var is function-scoped.
+WEB-15,web,hard,3,"In React, which hook is used to run side effects such as fetching data after render?",useState,useRef,useMemo,useEffect,D,useEffect runs after render and is the standard place for side effects.
+DBM-11,dbms,easy,1,Which SQL clause is used to filter rows?,ORDER BY,GROUP BY,WHERE,FROM,C,WHERE keeps only the rows that satisfy a condition.
+DBM-12,dbms,easy,1,Which SQL statement adds new rows to a table?,UPDATE,INSERT INTO,ADD ROW,CREATE,B,INSERT INTO adds new rows.
+DBM-13,dbms,medium,2,Which join returns all rows from the left table and the matching rows from the right table?,LEFT JOIN,INNER JOIN,RIGHT JOIN,FULL JOIN,A,"LEFT JOIN keeps every left row, with NULLs where the right side has no match."
+DBM-14,dbms,medium,2,"In the ACID properties of transactions, what does the letter I stand for?",Integrity,Isolation,Indexing,Inheritance,B,I stands for Isolation: concurrent transactions do not interfere with each other.
+DBM-15,dbms,hard,3,Which problem occurs when a transaction reads data written by another transaction that has not yet committed?,Lost update,Phantom read,Non-repeatable read,Dirty read,D,Reading uncommitted data is called a dirty read.

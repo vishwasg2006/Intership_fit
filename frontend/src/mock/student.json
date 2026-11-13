@@ -1,0 +1,75 @@
+{
+  "studentId": 1,
+  "name": "Ananya R",
+  "branch": "CSE",
+  "year": 3,
+  "cgpa": 8.1,
+  "overall": 88,
+  "readiness": "ready_now",
+  "skillScores": [
+    {
+      "skill": "aptitude",
+      "score": 88
+    },
+    {
+      "skill": "programming",
+      "score": 83
+    },
+    {
+      "skill": "web",
+      "score": 91
+    },
+    {
+      "skill": "dbms",
+      "score": 80
+    }
+  ],
+  "topMatches": [
+    {
+      "internshipId": 6,
+      "title": "Full Stack Development",
+      "company": "PowerPod",
+      "matchScore": 92,
+      "readiness": "ready_now"
+    },
+    {
+      "internshipId": 1,
+      "title": "Software Development",
+      "company": "Nexicat",
+      "matchScore": 88,
+      "readiness": "ready_now"
+    },
+    {
+      "internshipId": 2,
+      "title": "Python Development",
+      "company": "Kidsneuron",
+      "matchScore": 85,
+      "readiness": "ready_now"
+    }
+  ],
+  "shortlisted": false,
+  "attempts": [
+    {
+      "attemptId": "a1",
+      "mode": "supervised",
+      "status": "completed",
+      "violationsUsed": 0,
+      "overall": 88,
+      "takenAt": "2026-11-12T10:00:00Z",
+      "integrityStatus": "ok",
+      "integrityReasons": []
+    },
+    {
+      "attemptId": "a0",
+      "mode": "practice",
+      "status": "terminated",
+      "violationsUsed": 3,
+      "overall": 40,
+      "takenAt": "2026-11-10T10:00:00Z",
+      "integrityStatus": "review",
+      "integrityReasons": [
+        "TERMINATED_3_VIOLATIONS"
+      ]
+    }
+  ]
+}

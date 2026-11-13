@@ -1,0 +1,75 @@
+{
+  "matches": [
+    {
+      "internshipId": 6,
+      "title": "Full Stack Development",
+      "company": "PowerPod",
+      "location": "Bangalore",
+      "mode": "Hybrid",
+      "stipendInrMonth": 10000,
+      "deadline": "2026-11-20",
+      "applyUrl": "https://internshala.com/company/powerpod-1715346974",
+      "source": "Internshala",
+      "matchScore": 86,
+      "readiness": "ready_now",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "whyFits": "Meets every skill requirement for this role.",
+      "missingSkills": []
+    },
+    {
+      "internshipId": 7,
+      "title": "Full Stack Development",
+      "company": "LI-MAT SOFT SOLUTIONS PRIVATE LIMITED",
+      "location": "Bangalore",
+      "mode": "Onsite",
+      "stipendInrMonth": 5000,
+      "deadline": "2026-12-05",
+      "applyUrl": "https://internshala.com/company/li-mat-soft-solutions-private-limited-1682333168",
+      "source": "Internshala",
+      "matchScore": 71,
+      "readiness": "almost_there",
+      "eligibility": {
+        "eligible": true,
+        "reasons": []
+      },
+      "whyFits": "Strong in web and programming. To qualify fully, improve DBMS from 38 to 45.",
+      "missingSkills": [
+        {
+          "skill": "dbms",
+          "have": 38,
+          "need": 45
+        }
+      ]
+    },
+    {
+      "internshipId": 11,
+      "title": "Software Testing Intern",
+      "company": "VYBE CABS OPC PRIVATE LIMITED",
+      "location": "Arakere, Karnataka",
+      "mode": "Onsite",
+      "stipendInrMonth": 0,
+      "deadline": "2026-11-30",
+      "applyUrl": "https://internship.aicte-india.org/internships/1-INTERNSHIP_17917941266acc9bce0dd67",
+      "source": "AICTE portal",
+      "matchScore": 48,
+      "readiness": "build_first",
+      "eligibility": {
+        "eligible": false,
+        "reasons": [
+          "Year 2 is not allowed"
+        ]
+      },
+      "whyFits": "Aptitude is close to the requirement. To qualify fully, improve programming from 20 to 35.",
+      "missingSkills": [
+        {
+          "skill": "programming",
+          "have": 20,
+          "need": 35
+        }
+      ]
+    }
+  ]
+}
