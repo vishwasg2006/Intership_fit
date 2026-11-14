@@ -28,7 +28,7 @@ export default function Gaps() {
             <ul className="space-y-1 text-sm">
               {g.resources?.map((r) => (
                 <li key={r.url}>
-                  <a className="text-primary underline" href={r.url} target="_blank" rel="noreferrer">{r.title}</a>
+                  <a className="font-medium text-blue-600 underline hover:text-blue-800" href={r.url} target="_blank" rel="noreferrer">🔗 {r.title}</a>
                 </li>
               ))}
             </ul>
