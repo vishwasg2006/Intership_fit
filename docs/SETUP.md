@@ -29,10 +29,7 @@
    ```
 
    The command prints the active supervised session code. Demo accounts use `Demo@123`.
-<<<<<<< HEAD
    This reset uses the current initial migration, which includes placement-created coding assessments. If you are upgrading an existing database and need to preserve its data, apply `backend/migrations/002_coding_assessments.sql` with `psql -U postgres -d internshipfit -f backend/migrations/002_coding_assessments.sql` instead of resetting it.
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 6. Start the app:
 
    ```powershell
@@ -97,10 +94,7 @@ Install Node.js LTS and PostgreSQL 15+, then `sudo -u postgres createdb internsh
 - `PLACEMENT_INVITE_CODE` (default `PLACE-2026`): placement officers type this on sign-up. Leave empty to disable placement sign-up (demo placement account still works).
 - `LLM_PROVIDER=gemini` and `LLM_API_KEY=<your Gemini key>`: the "why it fits" sentence is written by Gemini. Without a key, or if Gemini fails, the app uses its built-in sentence. Scores and matching are always computed without the LLM.
 - `FRONTEND_ORIGIN`: extra allowed frontend URLs, comma separated.
-<<<<<<< HEAD
 - `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, and optional `SMTP_FROM`: required for password reset email delivery. The reset link expires after one hour. Without these values, the forgot-password endpoint reports that email delivery is not configured.
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 
 ## Troubleshooting
 
@@ -110,7 +104,6 @@ Install Node.js LTS and PostgreSQL 15+, then `sudo -u postgres createdb internsh
 - **Wrong database password:** update `DATABASE_URL` in `backend/.env` and retry `npm run db:reset`.
 - **`psql` not found:** add PostgreSQL's `bin` directory to `PATH`, reopen the terminal, or use the PostgreSQL SQL Shell to run `CREATE DATABASE internshipfit;`.
 - **No questions for a skill:** check that `data/question_bank.csv` contains all four skill tags: `aptitude`, `programming`, `web`, and `dbms`.
-<<<<<<< HEAD
 
 ## Google / GitHub login (optional)
 
@@ -119,5 +112,3 @@ Install Node.js LTS and PostgreSQL 15+, then `sudo -u postgres createdb internsh
 3. Put the IDs and secrets in `backend/.env` (see `.env.example`) and restart the API.
 
 Social sign-up always creates a **student** account; placement accounts still need the invite code. The provider's email must be verified. For deployment, set `BACKEND_URL` and `FRONTEND_ORIGIN` to your public URLs and use those in the provider consoles.
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69

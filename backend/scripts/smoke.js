@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import { pool } from "../src/db.js";
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 const base = process.env.API_BASE || "http://localhost:5000";
 let failed = false;
 const step = async (name, fn) => { try { await fn(); console.log(`PASS ${name}`); } catch (e) { failed = true; console.log(`FAIL ${name}: ${e.message}`); } };
@@ -21,10 +18,7 @@ const stamp = Date.now();
 
 await step("API health", async () => assert((await ok("/api/health")).status === "ok", "Health status was not ok"));
 await step("student demo login", async () => { const d = await ok("/api/auth/login", null, post({ email: "medium@demo.test", password: "Demo@123" })); studentToken = d.token; assert(d.user.role === "student" && typeof d.user.id === "number", "Expected student role and numeric id"); });
-<<<<<<< HEAD
 await step("email without password cannot log in", async () => { await expectStatus("/api/auth/login", null, post({ email: "medium@demo.test" }), 401); });
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 await step("student score history", async () => { const d = await ok("/api/students/me/scores", studentToken); assert(Array.isArray(d.history) && d.latest, "Score response missing latest/history"); });
 await step("student gaps and resources", async () => { const d = await ok("/api/students/me/gaps", studentToken); assert(Array.isArray(d.gaps) && Array.isArray(d.roadmap), "Invalid gap report"); });
 await step("explainable internship matches", async () => { const d = await ok("/api/students/me/matches", studentToken); assert(Array.isArray(d.matches) && d.matches.length <= 3 && d.matches.every((m) => m.whyFits), "Invalid matches response"); });
@@ -38,7 +32,6 @@ await step("placement cohort, ranking and review flags", async () => {
   assert(typeof d.students[0].studentId === "number", "studentId should be a number");
 });
 await step("supervised sessions", async () => { const d = await ok("/api/placement/sessions", placementToken); assert(Array.isArray(d.sessions), "Invalid sessions response"); });
-<<<<<<< HEAD
 await step("placement coding assessment create/list/close", async () => {
   const created = await ok("/api/placement/coding-assessments", placementToken, post({ title: `Coding Smoke ${stamp}`, description: "Return the input number.", difficulty: "easy", functionName: "solve", starterCode: "function solve(n) { return n; }", testCases: [{ input: [5], expected: 5 }], timeLimitMinutes: 15 }));
   const id = created.assessment.assessmentId;
@@ -48,14 +41,11 @@ await step("placement coding assessment create/list/close", async () => {
   const afterClose = await ok("/api/coding-assessments", studentToken); assert(!afterClose.assessments.some(a => a.assessmentId === id), "Closed assessment should no longer be visible to students");
   await expectStatus("/api/placement/coding-assessments", studentToken, {}, 403);
 });
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 await step("student cannot open placement routes (403)", async () => expectStatus("/api/placement/cohort", studentToken, {}, 403));
 await step("no token is rejected (401)", async () => expectStatus("/api/students/me/home", null, {}, 401));
 await step("placement signup needs invite code (403)", async () => expectStatus("/api/auth/signup", null, post({ name: "X", email: `p${stamp}@t.test`, password: "Passw0rd!", role: "placement", inviteCode: "wrong" }), 403));
 await step("weak password and bad email rejected (400)", async () => { await expectStatus("/api/auth/signup", null, post({ name: "X", email: `q${stamp}@t.test`, password: "short", role: "student" }), 400); await expectStatus("/api/auth/signup", null, post({ name: "X", email: "nope", password: "Passw0rd!", role: "student" }), 400); });
 await step("new student signup + profile validation", async () => {
-<<<<<<< HEAD
   const email = `smoke${stamp}@t.test`;
   const d = await ok("/api/auth/signup", null, post({ name: "Smoke Tester", email, password: "Passw0rd!", role: "student" }));
   assert(d.verificationRequired && !d.token, "Student signup must require email verification and not return a token");
@@ -63,9 +53,6 @@ await step("new student signup + profile validation", async () => {
   await expectStatus("/api/auth/verify-email", null, post({ email, code: "000000" }), 400);
   await pool.query("UPDATE users SET email_verified=true WHERE email=$1", [email]); // stands in for reading the emailed code
   newToken = (await ok("/api/auth/login", null, post({ email, password: "Passw0rd!" }))).token;
-=======
-  const d = await ok("/api/auth/signup", null, post({ name: "Smoke Tester", email: `smoke${stamp}@t.test`, password: "Passw0rd!", role: "student" })); newToken = d.token;
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   await expectStatus("/api/students/me/profile", newToken, { method: "PUT", body: JSON.stringify({ college: "X", branch: "CSE", year: 3 }) }, 400);
   const p = await ok("/api/students/me/profile", newToken, { method: "PUT", body: JSON.stringify({ college: "Smoke College", branch: "CSE", year: 3, cgpa: 8, consentShare: true }) });
   assert(p.profile.consentShare === true, "Profile not saved");
@@ -94,11 +81,7 @@ await step("3 violations terminate the attempt", async () => {
 await step("supervised session: create, take, close", async () => {
   const s = await ok("/api/placement/sessions", placementToken, post({ title: `Smoke ${stamp}`, perSkill: 1, timeLimitMinutes: 10 }));
   sessionCode = s.session.code; assert(/^[A-Z0-9]{6}$/.test(sessionCode), "Bad session code");
-<<<<<<< HEAD
   await expectStatus("/api/placement/sessions", placementToken, post({ title: "Too big", perSkill: 99, timeLimitMinutes: 10 }), 400);
-=======
-  await expectStatus("/api/placement/sessions", placementToken, post({ title: "Too big", perSkill: 10, timeLimitMinutes: 10 }), 400).catch(() => {});
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   await expectStatus("/api/assessment/questions?mode=supervised&sessionCode=ZZZZZZ", newToken, {}, 403);
   const a = await ok(`/api/assessment/questions?mode=supervised&sessionCode=${sessionCode}`, newToken);
   assert(a.mode === "supervised" && a.questions.length === 4, "Supervised attempt should have 4 questions");
@@ -120,7 +103,6 @@ await step("drives: validation, create, respond, count", async () => {
   const r = await ok(`/api/drives/${driveId}/respond`, newToken, post({ interested: true })); assert(r.responded, "Respond failed");
   const list = await ok("/api/placement/drives", placementToken); assert(list.drives.find((x) => x.driveId === driveId)?.responses === 1, "Responses should be 1");
 });
-<<<<<<< HEAD
 await step("deleted account token is rejected cleanly", async () => {
   const uid = (await pool.query("SELECT id FROM users WHERE email=$1", [`smoke${stamp}@t.test`])).rows[0].id;
   for (const t of ["drive_responses", "shortlists", "attempts"]) await pool.query(`DELETE FROM ${t} WHERE ${t === "shortlists" ? "student_id" : "user_id"}=$1`, [uid]);
@@ -128,7 +110,5 @@ await step("deleted account token is rejected cleanly", async () => {
   await expectStatus("/api/students/me/home", newToken, {}, 401);
 });
 await pool.end();
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 if (failed) process.exitCode = 1;
 else console.log("\nAll smoke checks passed.");

@@ -12,11 +12,8 @@ export default function StudentDrawer({ studentId, onClose }) {
   const [short, setShort] = useState(null);
   const [busy, setBusy] = useState(false);
   const [shortlistError, setShortlistError] = useState("");
-<<<<<<< HEAD
   const [reviewing, setReviewing] = useState(null);
   const [reviewMessage, setReviewMessage] = useState("");
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 
   useEffect(() => {
     const onKey = (event) => { if (event.key === "Escape") onClose(); };
@@ -37,10 +34,7 @@ export default function StudentDrawer({ studentId, onClose }) {
       setBusy(false);
     }
   };
-<<<<<<< HEAD
   const review = async (attemptId) => { setReviewing(attemptId); setReviewMessage(""); try { await api.resolveReview(attemptId); setReviewMessage("Manual review recorded."); reload(); } catch (e) { setReviewMessage(e.message); } finally { setReviewing(null); } };
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 
   return (
     <div className="fixed inset-0 z-40 flex justify-end bg-ink/40" onClick={onClose} role="presentation">
@@ -86,17 +80,11 @@ export default function StudentDrawer({ studentId, onClose }) {
                   {a.integrityReasons?.length > 0 && (
                     <p className="mt-1 text-xs text-almost">Flags: {a.integrityReasons.join(", ")}</p>
                   )}
-<<<<<<< HEAD
                   {a.integrityStatus === "review" && <Button className="mt-2" variant="secondary" loading={reviewing === a.attemptId} onClick={() => review(a.attemptId)}>Mark review complete</Button>}
                 </li>
               ))}
             </ul>
             {reviewMessage && <p className="mt-2 text-sm text-muted" role="status">{reviewMessage}</p>}
-=======
-                </li>
-              ))}
-            </ul>
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 
             {shortlistError && <p className="mt-4 text-sm text-build" role="alert">{shortlistError}</p>}
             <Button className="mt-6 w-full" variant={isShort ? "secondary" : "primary"} loading={busy} onClick={toggle}>

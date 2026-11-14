@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 import { api, USE_MOCK } from "../../api";
 import useProctor from "./useProctor";
 import { skillLabel } from "../../utils";
@@ -176,10 +173,7 @@ export default function Assessment() {
     const canStart = agree && (mode === "practice" || sessionCode.trim().length >= 4);
     return (
       <Page narrow title="Skill assessment" subtitle="Aptitude, programming, web and DBMS.">
-<<<<<<< HEAD
         <Card className="mb-4 flex items-center justify-between gap-3"><p className="text-sm text-muted">Want to write and run code?</p><Link className="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white" to="/coding">Open coding assessment</Link></Card>
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
         <Card>
           <div className="mb-4 flex gap-2">
             {[

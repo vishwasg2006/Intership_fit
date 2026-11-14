@@ -8,16 +8,12 @@ import Chip from "../../components/Chip";
 import Button from "../../components/Button";
 import Page, { Loading, ErrorBox } from "../../components/Page";
 
-<<<<<<< HEAD
 const MAX_RESUME_BYTES = 4 * 1024 * 1024;
 
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 export default function Home() {
   const { data, loading, error, reload } = useFetch(() => api.getHome(), []);
   const [busyId, setBusyId] = useState(null);
   const [driveErr, setDriveErr] = useState("");
-<<<<<<< HEAD
   const [resumeBusy, setResumeBusy] = useState(false);
   const [resumeMessage, setResumeMessage] = useState("");
   const uploadResume = async (event) => {
@@ -33,8 +29,6 @@ export default function Home() {
     } catch (e) { setResumeMessage(e.message || "Could not save resume."); }
     finally { setResumeBusy(false); event.target.value = ""; }
   };
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   const respond = async (d) => {
     setBusyId(d.driveId); setDriveErr("");
     try { await api.respondDrive(d.driveId, !d.responded); reload(); } catch (e) { setDriveErr(e.message); } finally { setBusyId(null); }
@@ -60,27 +54,20 @@ export default function Home() {
         </Card>
         <Card>
           <p className="text-sm text-muted">Internship matches</p>
-<<<<<<< HEAD
           {tested && data.matchCount > 0
             ? <p className="mt-1 text-3xl font-bold text-primary">{data.matchCount}</p>
             : <><p className="mt-1 text-3xl font-bold text-muted">{tested ? "0" : "-"}</p><p className="mt-1 text-xs text-muted">{tested ? "No matches yet. Improve your skill scores to unlock internships." : "Take the assessment to see matches."}</p></>}
-=======
-          <p className="mt-1 text-3xl font-bold text-primary">{data.matchCount ?? 0}</p>
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
         </Card>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
-<<<<<<< HEAD
           <h2 className="mb-2 font-bold">Resume and skills</h2>
           <p className="mb-3 text-sm text-muted">Upload a PDF or Word resume to extract skills for future recommendations.</p>
           <label className="inline-flex cursor-pointer items-center rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white">{resumeBusy ? "Reading resume…" : "Upload resume"}<input aria-label="Upload resume" className="sr-only" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" disabled={resumeBusy} onChange={uploadResume} /></label>
           {resumeMessage && <p className="mt-3 text-sm text-muted" role="status">{resumeMessage}</p>}
         </Card>
         <Card>
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
           <h2 className="mb-2 font-bold">Your next step</h2>
           {tested ? (
             <>

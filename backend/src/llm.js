@@ -17,19 +17,11 @@ export async function explainFit(m, matched, bySkill) {
     `Their scores: ${Object.entries(bySkill).map(([k, v]) => `${k} ${v}`).join(", ")}.`,
   ].join("\n");
   try {
-<<<<<<< HEAD
     const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
     const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": process.env.LLM_API_KEY },
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.3, maxOutputTokens: 200, thinkingConfig: { thinkingBudget: 0 } } }),
-=======
-    const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": process.env.LLM_API_KEY },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.3, maxOutputTokens: 120 } }),
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
     if (!res.ok) throw new Error(`Gemini ${res.status}`);

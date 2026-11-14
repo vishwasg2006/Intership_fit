@@ -4,12 +4,9 @@ Health
 - GET /api/health -> {status:"ok"}
 
 Auth and profile
-<<<<<<< HEAD
 - POST /api/auth/verify-email  body {email, code (6 digits)} -> {token, user}. 400 CODE_INVALID, 429 TOO_MANY_ATTEMPTS.
 - POST /api/auth/resend-code  body {email} -> {message}
 - NOTE: student signup now returns 201 {verificationRequired:true, email, message} with NO token; login returns 403 EMAIL_NOT_VERIFIED until verified. Placement signup (invite code) still returns {token,user}.
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 - POST /api/auth/signup  body {name, email, password (min 8), role, inviteCode} -> {token, user:{id, name, email, role}}  (inviteCode is required only when role is "placement" and must equal PLACEMENT_INVITE_CODE from backend/.env, otherwise 403 INVITE_REQUIRED; ids are numbers everywhere)
 - POST /api/auth/login   body {email, password} -> {token, user:{id, name, email, role}}
 - PUT /api/students/me/profile  body {college, branch, year, cgpa, consentShare} -> {profile:{college, branch, year, cgpa, consentShare}}
@@ -33,13 +30,10 @@ Placement cell (role "placement" only; only students with consentShare = true ar
 - POST /api/placement/sessions  body {title, perSkill, timeLimitMinutes} -> {session:{sessionId, code, title, perSkill, timeLimitMinutes, status:"active"}}  (code is 6 uppercase letters or digits)
 - GET /api/placement/sessions -> {sessions:[{sessionId, code, title, perSkill, timeLimitMinutes, status, attemptsTaken}]}
 - POST /api/placement/sessions/:sessionId/close -> {session:{sessionId, status:"closed"}}
-<<<<<<< HEAD
 - POST /api/placement/coding-assessments body {title,description,difficulty:"easy"|"medium"|"hard",functionName,starterCode,testCases:[{input:[...arguments],expected},...],timeLimitMinutes} -> {assessment:{assessmentId,title,description,difficulty,functionName,starterCode,testCases,timeLimitMinutes,status,createdAt}}
 - GET /api/placement/coding-assessments -> {assessments:[coding assessment objects, including closed assessments]}
 - POST /api/placement/coding-assessments/:assessmentId/close -> {assessment:coding assessment object with status:"closed"}
 - GET /api/coding-assessments (student role) -> {assessments:[active coding assessment objects]}
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 - POST /api/placement/drives  body {company, role, date, deadline, minCgpa, minScore, branches:[string]} -> {drive:{driveId, company, role, date, deadline, minCgpa, minScore, branches}}
 - GET /api/placement/drives -> {drives:[{driveId, company, role, date, deadline, minCgpa, minScore, branches, responses}]}  (responses = number of students who marked interest; create validates deadline <= date)
 - GET /api/drives -> {drives:[{driveId, company, role, date, deadline, minCgpa, minScore, branches, eligible, reasons:[string], responded}]}  (upcoming drives, date today or later, for students)
@@ -48,8 +42,5 @@ Placement cell (role "placement" only; only students with consentShare = true ar
 
 Errors
 - Every error is {error:{code, message}}. Codes used: VALIDATION_ERROR (400), UNAUTHORIZED (401), FORBIDDEN, INVITE_REQUIRED, SESSION_INVALID, NOT_ELIGIBLE (403), NOT_FOUND, ATTEMPT_NOT_FOUND, ATTEMPT_ENDED, EMAIL_EXISTS, NO_QUESTIONS (404/409), INTERNAL_ERROR (500).
-<<<<<<< HEAD
 - Resume uploads are limited to 4 MB; oversized JSON requests return 413 PAYLOAD_TOO_LARGE with a student-facing message.
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 - An in_progress attempt older than its time limit that was never submitted is marked "abandoned" and gets no score.

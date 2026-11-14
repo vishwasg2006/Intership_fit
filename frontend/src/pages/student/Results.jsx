@@ -84,14 +84,11 @@ export default function Results() {
         </Card>
       )}
 
-<<<<<<< HEAD
       <Card className="mt-4">
         <h2 className="mb-3 font-bold">Assessment history</h2>
         {history.length ? <div className="overflow-x-auto"><table className="w-full text-left text-sm"><thead className="text-muted"><tr><th className="py-2">Date</th><th>Type</th><th>Status</th><th>Score</th></tr></thead><tbody>{[...history].reverse().map((attempt) => <tr key={attempt.attemptId} className="border-t border-slate-100"><td className="py-2">{formatDate(attempt.takenAt)}</td><td>{attempt.mode === "supervised" ? "Supervised" : "Practice"}</td><td>{attempt.status}</td><td className="font-bold">{attempt.overall}%</td></tr>)}</tbody></table></div> : <p className="text-sm text-muted">No completed attempts yet.</p>}
       </Card>
 
-=======
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
       <div className="mt-6 flex gap-3">
         <Link to="/gaps"><Button>View gap report</Button></Link>
         <Link to="/matches"><Button variant="secondary">See my matches</Button></Link>

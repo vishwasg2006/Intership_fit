@@ -65,11 +65,7 @@ export default function Matches() {
   if (error) return <Page title="Matches"><ErrorBox message={error} onRetry={reload} /></Page>;
   return (
     <Page title="Your top internship matches" subtitle="Every match explains why it fits and what is missing.">
-<<<<<<< HEAD
       {data.matches.length === 0 && <Card><p className="text-muted">No matches yet. Take the assessment, or raise your skill scores, to get internship matches.</p></Card>}
-=======
-      {data.matches.length === 0 && <Card><p className="text-muted">Take the assessment to get matches.</p></Card>}
->>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
       <div className="space-y-4">{data.matches.map((m) => <MatchCard key={m.internshipId} m={m} />)}</div>
     </Page>
   );
