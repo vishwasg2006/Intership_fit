@@ -1,6 +1,9 @@
 // Every backend call lives here. Pages never call fetch directly.
 const BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+<<<<<<< HEAD
 export const API_BASE = BASE;
+=======
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 export const USE_MOCK = import.meta.env.VITE_USE_MOCK === "true";
 
 const mocks = import.meta.glob("./mock/*.json", { eager: true, import: "default" });
@@ -25,6 +28,7 @@ export const clearSession = () => {
 // ---- mock-only behaviour (used when VITE_USE_MOCK=true) ----
 const ACTIVE_ATTEMPT_KEY = "internshipfit:mock:active-attempt";
 const TERMINATED_SCORE_KEY = "internshipfit:mock:terminated-score";
+<<<<<<< HEAD
 const MOCK_CODING_KEY = "internshipfit:mock:coding-assessments";
 const readStored = (key) => { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch { return null; } };
 const shuffled = (items) => { const copy = [...items]; for (let i = copy.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; };
@@ -48,6 +52,18 @@ const mockHandlers = {
   },
   verifyEmail: (b) => ({ token: "mock-token", user: { id: 2, name: "Student", email: b.email, role: "student" } }),
   resendCode: () => ({ message: "A new code has been sent." }),
+=======
+const readStored = (key) => { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch { return null; } };
+const shuffled = (items) => { const copy = [...items]; for (let i = copy.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; };
+const mockHandlers = {
+  login: (b) => {
+    const role = (b?.email || "").startsWith("placement") ? "placement" : "student";
+    return {
+      token: "mock-token",
+      user: { id: 1, name: role === "placement" ? "Placement Officer" : "Ananya", email: b?.email || "", role },
+    };
+  },
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   signup: (b) => ({
     token: "mock-token",
     user: { id: 2, name: b.name, email: b.email, role: b.role || "student" },
@@ -132,7 +148,11 @@ async function request(method, path, body, mock) {
     clearSession();
     window.location.href = "/login";
   }
+<<<<<<< HEAD
   if (!res.ok) { const e = new Error(data?.error?.message || "Something went wrong"); e.code = data?.error?.code; throw e; }
+=======
+  if (!res.ok) throw new Error(data?.error?.message || "Something went wrong");
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   return data;
 }
 
@@ -149,12 +169,15 @@ export const api = {
   // auth + profile
   login: (b) => request("POST", "/api/auth/login", b, "login"),
   signup: (b) => request("POST", "/api/auth/signup", b, "signup"),
+<<<<<<< HEAD
   verifyEmail: (b) => request("POST", "/api/auth/verify-email", b, "verifyEmail"),
   resendCode: (email) => request("POST", "/api/auth/resend-code", { email }, "resendCode"),
   requestPasswordReset: (email) => request("POST", "/api/auth/forgot-password", { email }, "forgotPassword"),
   resetPassword: (token, password) => request("POST", "/api/auth/reset-password", { token, password }, "resetPassword"),
   uploadResume: (b) => request("PUT", "/api/students/me/resume", b, "resume"),
   resolveReview: (attemptId) => request("POST", "/api/placement/attempts/review", { attemptId }, "review"),
+=======
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   saveProfile: (b) => request("PUT", "/api/students/me/profile", b, "profile"),
   // assessment
   getQuestions: (p) => request("GET", `/api/assessment/questions${qs(p)}`, null, "questions"),
@@ -175,10 +198,13 @@ export const api = {
   getSessions: () => request("GET", "/api/placement/sessions", null, "sessions"),
   createSession: (b) => request("POST", "/api/placement/sessions", b, "sessionCreated"),
   closeSession: (id) => request("POST", `/api/placement/sessions/${id}/close`, null, "sessionClosed"),
+<<<<<<< HEAD
   getCodingAssessments: () => request("GET", "/api/coding-assessments", null, "codingAssessments"),
   getPlacementCodingAssessments: () => request("GET", "/api/placement/coding-assessments", null, "placementCodingAssessments"),
   createCodingAssessment: (b) => request("POST", "/api/placement/coding-assessments", b, "codingAssessmentCreated"),
   closeCodingAssessment: (id) => request("POST", `/api/placement/coding-assessments/${id}/close`, null, "codingAssessmentClosed"),
+=======
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   getPlacementDrives: () => request("GET", "/api/placement/drives", null, "placementDrives"),
   createDrive: (b) => request("POST", "/api/placement/drives", b, "driveCreated"),
 };

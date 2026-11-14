@@ -9,10 +9,15 @@ const Results = lazy(() => import("./pages/student/Results"));
 const Gaps = lazy(() => import("./pages/student/Gaps"));
 const Matches = lazy(() => import("./pages/student/Matches"));
 const Assessment = lazy(() => import("./pages/assessment/Assessment"));
+<<<<<<< HEAD
 const Coding = lazy(() => import("./pages/assessment/Coding"));
 const Dashboard = lazy(() => import("./pages/placement/Dashboard"));
 const Sessions = lazy(() => import("./pages/placement/Sessions"));
 const CodingAssessments = lazy(() => import("./pages/placement/CodingAssessments"));
+=======
+const Dashboard = lazy(() => import("./pages/placement/Dashboard"));
+const Sessions = lazy(() => import("./pages/placement/Sessions"));
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 const Drives = lazy(() => import("./pages/placement/Drives"));
 
 function Protected({ children, role }) {
@@ -40,8 +45,16 @@ function Step({n,icon,title,body}) { return <article className="step-card"><span
 function Nav() {
   const nav = useNavigate(); const user = getUser(); const [open,setOpen]=useState(false);
   if (!user || !getToken()) return null;
+<<<<<<< HEAD
   const links = user.role === "student" ? [["/home","Home"],["/assessment","Assessment"],["/coding","Coding"],["/results","Results"],["/gaps","Gap report"],["/matches","Matches"]] : [["/dashboard","Dashboard"],["/sessions","Test sessions"],["/coding-assessments","Coding tests"],["/drives","Campus drives"]];
   const cls=({isActive})=>`app-nav-link ${isActive?"active":""}`;
   return <header className="app-header"><Link to={user.role==="placement"?"/dashboard":"/home"} className="brand"><span className="brand-mark"><Target size={18}/></span>InternshipFit</Link><button className="mobile-menu" onClick={()=>setOpen(!open)} aria-label={open?"Close menu":"Open menu"}>{open?<X/>:<Menu/>}</button><nav className={open?"app-nav open":"app-nav"}>{links.map(([to,label])=><NavLink onClick={()=>setOpen(false)} key={to} to={to} className={cls}>{label}</NavLink>)}</nav><div className="user-area"><span className="user-avatar">{user.name?.[0]||"I"}</span><span className="user-name">{user.name}</span><button aria-label="Log out" className="logout-button" onClick={()=>{clearSession();nav("/");}}><LogOut size={16}/></button></div></header>;
 }
 export default function App(){return <><Nav/><Suspense fallback={<main className="mx-auto max-w-5xl px-6 py-12 text-center text-muted" role="status">Loading your workspace…</main>}><Routes><Route path="/" element={<Landing/>}/><Route path="/login" element={<LoginRoute/>}/><Route path="/profile" element={<Protected role="student"><Profile/></Protected>}/><Route path="/home" element={<Protected role="student"><Home/></Protected>}/><Route path="/assessment" element={<Protected role="student"><Assessment/></Protected>}/><Route path="/coding" element={<Protected role="student"><Coding/></Protected>}/><Route path="/results" element={<Protected role="student"><Results/></Protected>}/><Route path="/gaps" element={<Protected role="student"><Gaps/></Protected>}/><Route path="/matches" element={<Protected role="student"><Matches/></Protected>}/><Route path="/dashboard" element={<Protected role="placement"><Dashboard/></Protected>}/><Route path="/sessions" element={<Protected role="placement"><Sessions/></Protected>}/><Route path="/coding-assessments" element={<Protected role="placement"><CodingAssessments/></Protected>}/><Route path="/drives" element={<Protected role="placement"><Drives/></Protected>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></Suspense></>}
+=======
+  const links = user.role === "student" ? [["/home","Home"],["/assessment","Assessment"],["/results","Results"],["/gaps","Gap report"],["/matches","Matches"]] : [["/dashboard","Dashboard"],["/sessions","Test sessions"],["/drives","Campus drives"]];
+  const cls=({isActive})=>`app-nav-link ${isActive?"active":""}`;
+  return <header className="app-header"><Link to={user.role==="placement"?"/dashboard":"/home"} className="brand"><span className="brand-mark"><Target size={18}/></span>InternshipFit</Link><button className="mobile-menu" onClick={()=>setOpen(!open)} aria-label={open?"Close menu":"Open menu"}>{open?<X/>:<Menu/>}</button><nav className={open?"app-nav open":"app-nav"}>{links.map(([to,label])=><NavLink onClick={()=>setOpen(false)} key={to} to={to} className={cls}>{label}</NavLink>)}</nav><div className="user-area"><span className="user-avatar">{user.name?.[0]||"I"}</span><span className="user-name">{user.name}</span><button aria-label="Log out" className="logout-button" onClick={()=>{clearSession();nav("/");}}><LogOut size={16}/></button></div></header>;
+}
+export default function App(){return <><Nav/><Suspense fallback={<main className="mx-auto max-w-5xl px-6 py-12 text-center text-muted" role="status">Loading your workspace…</main>}><Routes><Route path="/" element={<Landing/>}/><Route path="/login" element={<LoginRoute/>}/><Route path="/profile" element={<Protected role="student"><Profile/></Protected>}/><Route path="/home" element={<Protected role="student"><Home/></Protected>}/><Route path="/assessment" element={<Protected role="student"><Assessment/></Protected>}/><Route path="/results" element={<Protected role="student"><Results/></Protected>}/><Route path="/gaps" element={<Protected role="student"><Gaps/></Protected>}/><Route path="/matches" element={<Protected role="student"><Matches/></Protected>}/><Route path="/dashboard" element={<Protected role="placement"><Dashboard/></Protected>}/><Route path="/sessions" element={<Protected role="placement"><Sessions/></Protected>}/><Route path="/drives" element={<Protected role="placement"><Drives/></Protected>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></Suspense></>}
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69

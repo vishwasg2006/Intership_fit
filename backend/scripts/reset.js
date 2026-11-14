@@ -14,7 +14,11 @@ const migration = await fs.readFile(path.join(here, "../migrations/001_initial.s
 const q = (s) => s.replaceAll("'", "''");
 if (process.env.NODE_ENV === "production" && !process.argv.includes("--force")) { console.error("Refusing to wipe the database in production. Pass --force to override."); process.exit(1); }
 try {
+<<<<<<< HEAD
   await pool.query("DROP TABLE IF EXISTS coding_assessments, email_verifications, password_resets, drive_responses, shortlists, drives, attempts, sessions, resources, questions, internship_skills, internships, student_profiles, users CASCADE;");
+=======
+  await pool.query("DROP TABLE IF EXISTS drive_responses, shortlists, drives, attempts, sessions, resources, questions, internship_skills, internships, student_profiles, users CASCADE;");
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   await pool.query(migration);
   const [internships, skills, questions, resources] = await Promise.all([csv("internships_collected.csv"), csv("internship_skills_collected.csv"), csv("question_bank.csv"), csv("resources.csv")]);
   for (const i of internships) await pool.query(`INSERT INTO internships (internship_id,title,company,company_type,location,mode,stipend_inr_month,duration_months,deadline,allowed_branches,allowed_years,min_cgpa,apply_url,source,data_status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)`, [i.internship_id,i.title,i.company,i.company_type||null,i.location,i.mode,i.stipend_inr_month===""?null:Number(i.stipend_inr_month),i.duration_months===""?null:Number(i.duration_months),i.deadline||null,i.allowed_branches?i.allowed_branches.split("|"):[],i.allowed_years?i.allowed_years.split("|").map(Number):[],i.min_cgpa===""?null:Number(i.min_cgpa),i.apply_url,i.source,i.data_status]);
@@ -23,7 +27,11 @@ try {
   for (const item of resources) await pool.query("INSERT INTO resources (skill,title,url) VALUES ($1,$2,$3)",[item.skill,item.title,item.url]);
   const passwordHash = await bcrypt.hash("Demo@123", 10);
   const addUser = async (name,email,role,profile=null) => {
+<<<<<<< HEAD
     const u=(await pool.query("INSERT INTO users(name,email,password_hash,role,email_verified) VALUES($1,$2,$3,$4,true) RETURNING id",[name,email,passwordHash,role])).rows[0];
+=======
+    const u=(await pool.query("INSERT INTO users(name,email,password_hash,role) VALUES($1,$2,$3,$4) RETURNING id",[name,email,passwordHash,role])).rows[0];
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
     if(profile) await pool.query("INSERT INTO student_profiles(user_id,college,branch,year,cgpa,consent_share) VALUES($1,$2,$3,$4,$5,$6)",[u.id,profile.college,profile.branch,profile.year,profile.cgpa,profile.consent]);
     return u.id;
   };

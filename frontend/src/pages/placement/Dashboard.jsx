@@ -1,5 +1,8 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { api } from "../../api";
 import useFetch from "../../hooks/useFetch";
@@ -7,7 +10,10 @@ import { BRANCHES, SKILL_LABELS, skillLabel } from "../../utils";
 import Card from "../../components/Card";
 import Chip, { Badge } from "../../components/Chip";
 import Page, { Loading, ErrorBox } from "../../components/Page";
+<<<<<<< HEAD
 import Button from "../../components/Button";
+=======
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 import StudentDrawer from "../../components/placement/StudentDrawer";
 
 export default function Dashboard() {
@@ -25,7 +31,11 @@ export default function Dashboard() {
   const summary = cohort.data?.summary;
 
   return (
+<<<<<<< HEAD
     <Page title="Placement dashboard" subtitle="Live skill data for your students (only students who agreed to share)." right={<Link to="/coding-assessments"><Button>Create coding assessment</Button></Link>}>
+=======
+    <Page title="Placement dashboard" subtitle="Live skill data for your students (only students who agreed to share).">
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
       <div className="mb-6 grid gap-4 sm:grid-cols-4">
         {[
           ["Students tested", summary?.tested],

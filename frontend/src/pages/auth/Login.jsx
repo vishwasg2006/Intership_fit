@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { api, setSession, API_BASE, USE_MOCK } from "../../api";
+=======
+import { useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { api, setSession, USE_MOCK } from "../../api";
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 
@@ -8,6 +14,7 @@ export default function Login() {
   const nav = useNavigate();
   const [params] = useSearchParams();
   const [mode, setMode] = useState(params.get("tab") === "signup" ? "signup" : "login");
+<<<<<<< HEAD
   const [forgot, setForgot] = useState(false);
   const [reset, setReset] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -18,6 +25,11 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const input = "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 outline-none focus:border-primary";
+=======
+  const [form, setForm] = useState({ name: "", email: "", password: "", role: "student", inviteCode: "" });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
   const submit = async (e) => {
@@ -29,15 +41,24 @@ export default function Login() {
         mode === "login"
           ? await api.login({ email: form.email, password: form.password })
           : await api.signup(form);
+<<<<<<< HEAD
       if (res.verificationRequired) { setVerify(res.email); setCode(""); setNotice(res.message); return; }
       finish(res);
     } catch (err) {
       if (err.code === "EMAIL_NOT_VERIFIED") { setVerify(form.email.trim().toLowerCase()); setCode(""); setNotice("Your email is not verified yet. Enter the 6-digit code we email you."); api.resendCode(form.email).catch(() => {}); }
       else setError(err.message);
+=======
+      setSession(res);
+      if (res.user.role === "placement") nav("/dashboard");
+      else nav(mode === "signup" ? "/profile" : "/home");
+    } catch (err) {
+      setError(err.message);
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
     } finally {
       setLoading(false);
     }
   };
+<<<<<<< HEAD
   useEffect(() => {
     const h = window.location.hash;
     if (!h.startsWith("#oauth")) return;
@@ -86,14 +107,25 @@ export default function Login() {
     return <div className="flex min-h-screen items-center justify-center px-4"><Card className="w-full max-w-md"><h1 className="text-2xl font-bold text-brand">Verify your email</h1><p className="mb-5 mt-1 text-sm text-muted">Enter the 6-digit code sent to {verify}. It expires in 15 minutes.</p><form onSubmit={submitCode} className="space-y-3"><input aria-label="Verification code" className={`${input} text-center text-2xl tracking-widest`} inputMode="numeric" maxLength={6} placeholder="••••••" value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} required />{error && <p className="text-sm text-build">{error}</p>}{notice && <p className="text-sm text-ready">{notice}</p>}<Button className="w-full" disabled={loading || code.length !== 6}>{loading ? "Verifying..." : "Verify and continue"}</Button><button type="button" className="w-full text-sm text-primary underline" onClick={resendCode}>Resend code</button><button type="button" className="w-full text-sm text-muted underline" onClick={() => { setVerify(""); setError(""); setNotice(""); }}>Back</button></form></Card></div>;
   }
 
+=======
+
+  const input = "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 outline-none focus:border-primary";
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <Card className="w-full max-w-md">
         <Link to="/" className="text-sm font-bold text-brand">← InternshipFit</Link>
+<<<<<<< HEAD
         <h1 className="mt-4 text-2xl font-bold text-brand">{forgot ? "Reset your password" : mode === "login" ? "Welcome back" : "Create your account"}</h1>
         <p className="mb-5 text-sm text-muted">Know your fit. Fix your gaps. Get matched.</p>
 
         {!forgot && <div className="mb-4 flex gap-2">
+=======
+        <h1 className="mt-4 text-2xl font-bold text-brand">{mode === "login" ? "Welcome back" : "Create your account"}</h1>
+        <p className="mb-5 text-sm text-muted">Know your fit. Fix your gaps. Get matched.</p>
+
+        <div className="mb-4 flex gap-2">
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
           {["login", "signup"].map((m) => (
             <button
               key={m}
@@ -103,6 +135,7 @@ export default function Login() {
               {m === "login" ? "Log in" : "Sign up"}
             </button>
           ))}
+<<<<<<< HEAD
         </div>}
 
 
@@ -120,6 +153,11 @@ export default function Login() {
           <div className="my-4 flex items-center gap-3 text-xs text-muted"><span className="h-px flex-1 bg-slate-200" />or use your email<span className="h-px flex-1 bg-slate-200" /></div>
         </div>}
         {forgot ? <form onSubmit={requestReset} className="space-y-3"><label className="block text-sm font-medium">Registered email<input aria-label="Email address" className={`${input} mt-1`} type="email" value={form.email} onChange={set("email")} required /></label>{error && <p className="text-sm text-build">{error}</p>}{notice && <p className="text-sm text-ready">{notice}</p>}<Button className="w-full" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button><button type="button" className="w-full text-sm text-primary underline" onClick={() => { setForgot(false); setError(""); }}>Back to login</button></form> : <form onSubmit={submit} className="space-y-3">
+=======
+        </div>
+
+        <form onSubmit={submit} className="space-y-3">
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
           {mode === "signup" && (
             <>
               <label className="block text-sm font-medium">Full name<input aria-label="Full name" className={`${input} mt-1`} placeholder="e.g. Ananya Rao" value={form.name} onChange={set("name")} required /></label>
@@ -136,6 +174,7 @@ export default function Login() {
           <Button className="w-full" disabled={loading}>
             {loading ? "Please wait..." : mode === "login" ? "Log in" : "Create account"}
           </Button>
+<<<<<<< HEAD
           {mode === "login" && <button type="button" className="w-full text-sm text-primary underline" onClick={() => { setForgot(true); setNotice(""); setError(""); }}>Forgot password?</button>}
         </form>
         }
@@ -143,6 +182,13 @@ export default function Login() {
         <p className="mt-4 text-xs text-muted">
           {USE_MOCK
             ? "Demo mode accepts the listed demo accounts only; use the shared demo password."
+=======
+        </form>
+
+        <p className="mt-4 text-xs text-muted">
+          {USE_MOCK
+            ? "Demo mode: any email works. An email starting with 'placement' opens the placement view."
+>>>>>>> 63ceeb9ba9da1e14cfe0a1b454d0f7c314c52a69
             : "Demo logins: strong@demo.test, medium@demo.test, weak@demo.test, placement@demo.test (password Demo@123)"}
         </p>
       </Card>
