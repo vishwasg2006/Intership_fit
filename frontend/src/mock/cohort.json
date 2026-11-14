@@ -1,0 +1,243 @@
+{
+  "summary": {
+    "tested": 8,
+    "avgScore": 62,
+    "readyNow": 2,
+    "verifiedCount": 2,
+    "reviewCount": 3
+  },
+  "students": [
+    {
+      "studentId": 1,
+      "rank": 1,
+      "name": "Ananya R",
+      "branch": "CSE",
+      "year": 3,
+      "overall": 88,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 88
+        },
+        {
+          "skill": "programming",
+          "score": 83
+        },
+        {
+          "skill": "web",
+          "score": 91
+        },
+        {
+          "skill": "dbms",
+          "score": 80
+        }
+      ],
+      "readiness": "ready_now",
+      "scoreType": "verified",
+      "integrityStatus": "ok"
+    },
+    {
+      "studentId": 2,
+      "rank": 2,
+      "name": "Rahul K",
+      "branch": "ISE",
+      "year": 3,
+      "overall": 81,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 81
+        },
+        {
+          "skill": "programming",
+          "score": 76
+        },
+        {
+          "skill": "web",
+          "score": 84
+        },
+        {
+          "skill": "dbms",
+          "score": 73
+        }
+      ],
+      "readiness": "ready_now",
+      "scoreType": "self_reported",
+      "integrityStatus": "ok"
+    },
+    {
+      "studentId": 3,
+      "rank": 3,
+      "name": "Meera S",
+      "branch": "ECE",
+      "year": 4,
+      "overall": 74,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 74
+        },
+        {
+          "skill": "programming",
+          "score": 69
+        },
+        {
+          "skill": "web",
+          "score": 77
+        },
+        {
+          "skill": "dbms",
+          "score": 66
+        }
+      ],
+      "readiness": "almost_there",
+      "scoreType": "verified",
+      "integrityStatus": "ok"
+    },
+    {
+      "studentId": 4,
+      "rank": 4,
+      "name": "Kiran P",
+      "branch": "CSE",
+      "year": 2,
+      "overall": 66,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 66
+        },
+        {
+          "skill": "programming",
+          "score": 61
+        },
+        {
+          "skill": "web",
+          "score": 69
+        },
+        {
+          "skill": "dbms",
+          "score": 58
+        }
+      ],
+      "readiness": "almost_there",
+      "scoreType": "self_reported",
+      "integrityStatus": "ok"
+    },
+    {
+      "studentId": 5,
+      "rank": 5,
+      "name": "Sneha D",
+      "branch": "Diploma-CS",
+      "year": 3,
+      "overall": 58,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 58
+        },
+        {
+          "skill": "programming",
+          "score": 53
+        },
+        {
+          "skill": "web",
+          "score": 61
+        },
+        {
+          "skill": "dbms",
+          "score": 50
+        }
+      ],
+      "readiness": "almost_there",
+      "scoreType": "self_reported",
+      "integrityStatus": "review"
+    },
+    {
+      "studentId": 6,
+      "rank": 6,
+      "name": "Arjun V",
+      "branch": "Mech",
+      "year": 4,
+      "overall": 49,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 49
+        },
+        {
+          "skill": "programming",
+          "score": 44
+        },
+        {
+          "skill": "web",
+          "score": 52
+        },
+        {
+          "skill": "dbms",
+          "score": 41
+        }
+      ],
+      "readiness": "build_first",
+      "scoreType": "self_reported",
+      "integrityStatus": "ok"
+    },
+    {
+      "studentId": 7,
+      "rank": 7,
+      "name": "Divya N",
+      "branch": "EEE",
+      "year": 3,
+      "overall": 44,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 44
+        },
+        {
+          "skill": "programming",
+          "score": 39
+        },
+        {
+          "skill": "web",
+          "score": 47
+        },
+        {
+          "skill": "dbms",
+          "score": 36
+        }
+      ],
+      "readiness": "build_first",
+      "scoreType": "self_reported",
+      "integrityStatus": "review"
+    },
+    {
+      "studentId": 8,
+      "rank": 8,
+      "name": "Imran A",
+      "branch": "ITI-COPA",
+      "year": 2,
+      "overall": 38,
+      "skillScores": [
+        {
+          "skill": "aptitude",
+          "score": 38
+        },
+        {
+          "skill": "programming",
+          "score": 33
+        },
+        {
+          "skill": "web",
+          "score": 41
+        },
+        {
+          "skill": "dbms",
+          "score": 30
+        }
+      ],
+      "readiness": "build_first",
+      "scoreType": "self_reported",
+      "integrityStatus": "review"
+    }
+  ]
+}

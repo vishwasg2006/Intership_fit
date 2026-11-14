@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "skill": "aptitude",
+      "avgScore": 64,
+      "belowTargetPct": 45
+    },
+    {
+      "skill": "programming",
+      "avgScore": 58,
+      "belowTargetPct": 60
+    },
+    {
+      "skill": "web",
+      "avgScore": 66,
+      "belowTargetPct": 40
+    },
+    {
+      "skill": "dbms",
+      "avgScore": 51,
+      "belowTargetPct": 72
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "attemptId": "mock-attempt-1",
+  "mode": "practice",
+  "status": "completed",
+  "violationsUsed": 0,
+  "overall": 68,
+  "skillScores": [
+    {
+      "skill": "aptitude",
+      "score": 72
+    },
+    {
+      "skill": "programming",
+      "score": 70
+    },
+    {
+      "skill": "web",
+      "score": 80
+    },
+    {
+      "skill": "dbms",
+      "score": 50
+    }
+  ],
+  "takenAt": "2026-11-13T12:09:00Z"
+}

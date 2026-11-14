@@ -1,0 +1,22 @@
+{
+  "name": "Ananya",
+  "latestOverall": 68,
+  "readiness": "almost_there",
+  "matchCount": 3,
+  "upcomingDrives": [
+    {
+      "driveId": 1,
+      "company": "Acme Systems",
+      "role": "Software Trainee",
+      "date": "2026-11-25",
+      "deadline": "2026-11-22"
+    },
+    {
+      "driveId": 2,
+      "company": "DataWorks",
+      "role": "Data Analyst Intern",
+      "date": "2026-12-02",
+      "deadline": "2026-11-28"
+    }
+  ]
+}

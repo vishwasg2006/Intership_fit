@@ -1,0 +1,12 @@
+{
+  "name": "internshipfit",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install && npm install --prefix frontend && npm install --prefix backend",
+    "db:reset": "npm --prefix backend run db:reset",
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm --prefix backend run dev\" \"npm --prefix frontend run dev -- --host 0.0.0.0\"",
+    "smoke": "node backend/scripts/smoke.js"
+  },
+  "devDependencies": { "concurrently": "^9.1.0" }
+}
